@@ -1,5 +1,5 @@
 def hello(s):
-    print('Hello, ' + s +'!')
+    print('Hello, ' + s + '!')
 
 
 hello("world")
