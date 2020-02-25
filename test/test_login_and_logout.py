@@ -14,6 +14,6 @@ def app(request):
 def test_login_and_logout(app):
     # Test name: Login and Logout
     user = User("san-100@bk.ru", "1234")
-    app.login(email=user.email, password=user.password)
+    app.session.login(email=user.email, password=user.password)
     app.open_category()
-    app.logout()
+    app.session.logout()
