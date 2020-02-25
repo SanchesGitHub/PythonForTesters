@@ -1,7 +1,7 @@
 # Selenium
 import pytest
-from application import Application
-from user import User
+from fixture.application import Application
+from model.user import User
 
 
 @pytest.fixture()
