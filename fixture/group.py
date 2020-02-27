@@ -10,3 +10,7 @@ class GroupHelper:
         # click | css=.category-1:nth-child(1) > a |  |
         wd = self.app
         wd.driver.find_element(By.CSS_SELECTOR, ".category-1:nth-child(1) > a").click()
+
+    def open_duck(self):
+        wd = self.app
+        wd.driver.find_element(By.XPATH, ".//div[@class='name' and text()='Purple Duck']").click()
