@@ -1,10 +1,33 @@
 import pytest
 
 from fixture.application import Application
+from model.user import User
+
+fixture = None
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture
 def app(request):
-    fixture = Application()
-    request.addfinalizer(fixture.destroy)
+    global fixture
+    user = create_user()
+    if fixture is None:
+        fixture = Application()
+        fixture.session.login(email=user.email, password=user.password)
+    else:
+        if not fixture.is_valid():
+            fixture = Application()
+            fixture.session.login(email=user.email, password=user.password)
     return fixture
+
+
+@pytest.fixture(scope="session", autouse=True)
+def stop(request):
+    def fin():
+        fixture.session.logout()
+        fixture.destroy()
+    request.addfinalizer(fin)
+
+
+def create_user(email="san-100@bk.ru", password="1234"):
+    user = User(email, password)
+    return user
