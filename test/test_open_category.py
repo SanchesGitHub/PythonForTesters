@@ -1,2 +1,2 @@
-def test_open_category1(app):
+def test_open_category(app):
     app.group.open_category()
