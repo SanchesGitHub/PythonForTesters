@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 from fixture.group import GroupHelper
 from fixture.session import SessionHelper
@@ -14,8 +13,6 @@ class Application:
         self.group = GroupHelper(self)
 
     def open_home_page(self):
-        # Step # | target | value | comment
-        # open | /litecart/en/ |  |
         self.driver.get("http://localhost/litecart/en/")
 
     def destroy(self):

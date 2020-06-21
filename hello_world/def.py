@@ -7,7 +7,7 @@ def percents(x, y):
 
 def print_percents(x, y):
     """Print"""
-    print(str(y) + ' is ' + str(percents(x, y)) + ' % of ' + str(x))
+    print(str(y) + ' is ' + str(percents(x, y)) + '% of ' + str(x))
 
 
 percents(200, 50)
