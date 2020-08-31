@@ -1,3 +1,5 @@
+from random import randrange
+
 from model.duck import Duck
 
 
@@ -6,6 +8,7 @@ def test_open_duck(app):
 
     app.group.open_category()
     ducks = app.group.get_duck_list()
+    index = randrange(len(ducks))
     assert len(ducks) > 0
     assert ducks.__contains__(duck)
     app.group.open_duck()
