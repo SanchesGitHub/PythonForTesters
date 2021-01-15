@@ -13,7 +13,7 @@ class Application:
         self.group = GroupHelper(self)
 
     def open_home_page(self):
-        self.driver.get("http://localhost/litecart/en/")
+        self.driver.get('http://localhost/litecart/en/')
 
     def destroy(self):
         self.driver.quit()
